@@ -101,4 +101,13 @@ function onGalleryClick(event) {
     `<img src="${largeImageUrl}" width="1112" height="640">`,
   );
   modal.show();
+
+document.addEventListener('keydown', closeImg);
+
+  function closeImg(event) {
+    if (event.code === "Escape") {
+      modal.close();
+      document.removeEventListener("keydown", closeImg);
+    }
+  }
 }
